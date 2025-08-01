@@ -20,5 +20,36 @@ Constraints:
 1 ≤ arr[i] ≤ 109
     */
 
+class Solution {
+    public int findMinDiff(ArrayList<Integer> arr, int m) {
+        // your code here
+        
+        
+        Collections.sort(arr);
+        
+        int minDiff=Integer.MAX_VALUE;
+        
+        for(int i=0;i<arr.size();i++){
+            
+            
+            
+            int tempIndex=i+m-1 ;
+            
+            if(tempIndex>arr.size()-1){
+                break;
+            }
+            
+            minDiff=Math.min(minDiff,(arr.get(tempIndex)-arr.get(i)));
+        
+            
+        }
+        
+        
+        return minDiff;
+        
+        
+    }
+}
+
 
 
